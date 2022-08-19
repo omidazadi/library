@@ -1,10 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.tosansoha.library.LibraryApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.324 s <<< FAILURE! - in com.tosansoha.library.LibraryApplicationTests
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.66 s <<< FAILURE! - in com.tosansoha.library.LibraryApplicationTests
 contextLoads  Time elapsed: 0.002 s  <<< ERROR!
-java.lang.IllegalStateException: Failed to load ApplicationContext
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'bookRepository' defined in com.tosansoha.library.repositories.BookRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Cannot create inner bean '(inner bean)#4aeb0e2b' of type [org.springframework.orm.jpa.SharedEntityManagerCreator] while setting bean property 'entityManager'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4aeb0e2b': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'entityManagerFactory' available
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#4aeb0e2b': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'entityManagerFactory' available
-Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No bean named 'entityManagerFactory' available
+java.lang.NoClassDefFoundError: javax/persistence/EntityManagerFactory
+Caused by: java.lang.ClassNotFoundException: javax.persistence.EntityManagerFactory
 

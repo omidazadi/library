@@ -26,13 +26,11 @@ public class Member {
     public Member() {
     }
 
-    public Member(Integer id, String name, LocalDate birthDate, LocalDate registrationDate, String bio, Set<Ownership> ownerships) {
-        this.id = id;
+    public Member(String name, LocalDate birthDate, LocalDate registrationDate, String bio) {
         this.name = name;
         this.birthDate = birthDate;
         this.registrationDate = registrationDate;
         this.bio = bio;
-        this.ownerships = ownerships;
     }
      
     public Integer getId() {

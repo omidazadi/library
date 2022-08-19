@@ -28,14 +28,12 @@ public class Book {
     public Book() {
     }
 
-    public Book(Integer id, String title, String author, Float price, YearMonth publicationDate, String description, Set<Ownership> ownerships) {
-        this.id = id;
+    public Book(String title, String author, Float price, YearMonth publicationDate, String description) {
         this.title = title;
         this.author = author;
         this.price = price;
         this.publicationDate = publicationDate;
         this.description = description;
-        this.ownerships = ownerships;
     }
     
     public Integer getId() {

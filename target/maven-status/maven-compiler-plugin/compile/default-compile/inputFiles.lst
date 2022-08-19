@@ -6,4 +6,5 @@
 /home/hee/Codes/Projects/library/src/main/java/com/tosansoha/library/LibraryApplication.java
 /home/hee/Codes/Projects/library/src/main/java/com/tosansoha/library/repositories/OwnershipRepository.java
 /home/hee/Codes/Projects/library/src/main/java/com/tosansoha/library/models/Book.java
+/home/hee/Codes/Projects/library/src/main/java/com/tosansoha/library/AppConfig.java
 /home/hee/Codes/Projects/library/src/main/java/com/tosansoha/library/models/Ownership.java
