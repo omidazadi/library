@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 import javax.persistence.*;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 @Entity
 @Table(name = "Ownership")
 public class Ownership {
@@ -17,7 +19,7 @@ public class Ownership {
     @MapsId("bookId")
     @JoinColumn(name = "memberId")
     private Book book;
-    @Column(name = "acquirementDate")
+    @Column(name = "acquirementDate", columnDefinition = "DATE")
     private LocalDate acquirementDate;
 
     public Ownership() {
@@ -54,12 +56,17 @@ public class Ownership {
         this.book = book;
     }
 
-
     public LocalDate getAcquirementDate() {
         return this.acquirementDate;
     }
 
     public void setAcquirementDate(LocalDate acquirementDate) {
         this.acquirementDate = acquirementDate;
+    }
+
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this);
     }
 }

@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 @Embeddable
 public class OwnershipKey implements Serializable{
     @Column(name = "bookId")
@@ -35,4 +37,9 @@ public class OwnershipKey implements Serializable{
         this.memberId = memberId;
     }
 
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this);
+    }
 }

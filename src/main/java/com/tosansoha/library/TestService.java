@@ -1,7 +1,6 @@
 package com.tosansoha.library;
 
 import java.time.LocalDate;
-import java.time.YearMonth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,7 +27,7 @@ public class TestService {
 
     public Book addBook() {
         Book newBook = new Book("Basic Economics", "Thomas Sowell", 
-        0.99f, YearMonth.parse("2014-12"), "A citizen's guide to economics.");
+        0.99f, LocalDate.parse("2014-12-01"), "A citizen's guide to economics.");
         bookRepository.save(newBook);
         return newBook;
     }

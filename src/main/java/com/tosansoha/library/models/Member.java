@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import org.apache.commons.lang.builder.ToStringBuilder;
+
 @Entity
 @Table(name = "Member")
 public class Member {
@@ -14,9 +16,9 @@ public class Member {
     private Integer id;
     @Column(name = "_name")
     private String name;
-    @Column(name = "birthDate")
+    @Column(name = "birthDate", columnDefinition = "DATE")
     private LocalDate birthDate;
-    @Column(name = "registrationDate")
+    @Column(name = "registrationDate", columnDefinition = "DATE")
     private LocalDate registrationDate;
     @Column(name = "bio")
     private String bio;
@@ -49,12 +51,12 @@ public class Member {
         this.name = name;
     }
 
-    public String getBirthDate() {
-        return this.birthDate.toString();
+    public LocalDate getBirthDate() {
+        return this.birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
-        this.birthDate = LocalDate.parse(birthDate);
+    public void setBirthDate(LocalDate birthDate) {
+        this.birthDate = birthDate;
     }
 
     public LocalDate getRegistrationDate() {
@@ -81,4 +83,9 @@ public class Member {
         this.ownerships = ownerships;
     }
 
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this);
+    }
 }

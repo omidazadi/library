@@ -4,5 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.tosansoha.library.models.*;
 
-public interface OwnershipRepository extends JpaRepository <Ownership, Integer> {
+public interface OwnershipRepository extends JpaRepository <Ownership, OwnershipKey> {
 }

@@ -1,9 +1,11 @@
 package com.tosansoha.library.models;
 
-import java.time.YearMonth;
+import java.time.LocalDate;
 import java.util.Set;
 
 import javax.persistence.*;
+
+import org.apache.commons.lang.builder.ToStringBuilder;
 
 @Entity
 @Table(name = "Book")
@@ -18,8 +20,8 @@ public class Book {
     private String author;
     @Column(name = "price")
     private Float price;
-    @Column(name = "publicationDate")
-    private YearMonth publicationDate;
+    @Column(name = "publicationDate", columnDefinition = "DATE")
+    private LocalDate publicationDate;
     @Column(name = "_description")
     private String description;
     @OneToMany(mappedBy = "book")
@@ -28,7 +30,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(String title, String author, Float price, YearMonth publicationDate, String description) {
+    public Book(String title, String author, Float price, LocalDate publicationDate, String description) {
         this.title = title;
         this.author = author;
         this.price = price;
@@ -68,11 +70,11 @@ public class Book {
         this.price = price;
     }
 
-    public YearMonth getPublicationDate() {
+    public LocalDate getPublicationDate() {
         return this.publicationDate;
     }
 
-    public void setPublicationDate(YearMonth publicationDate) {
+    public void setPublicationDate(LocalDate publicationDate) {
         this.publicationDate = publicationDate;
     }
 
@@ -92,4 +94,9 @@ public class Book {
         this.ownerships = ownerships;
     }
 
+    @Override
+    public String toString()
+    {
+        return ToStringBuilder.reflectionToString(this);
+    }
 }
