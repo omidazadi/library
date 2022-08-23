@@ -31,7 +31,7 @@ public class Ownership {
         this.book = book;
         this.acquirementDate = acquirementDate;
     }
-
+    
     public OwnershipKey getId() {
         return this.id;
     }
@@ -67,6 +67,10 @@ public class Ownership {
     @Override
     public String toString()
     {
-        return ToStringBuilder.reflectionToString(this);
+        return new ToStringBuilder(this)
+        .append("bookId", book.getId())
+        .append("bookTitle", book.getTitle())
+        .append("acquirementDate" , this.getAcquirementDate())
+        .toString();
     }
 }

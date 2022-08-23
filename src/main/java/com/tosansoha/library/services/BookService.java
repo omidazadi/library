@@ -22,8 +22,6 @@ public class BookService {
     }
 
     public Book addBook(Map<String, String> attributes) {
-        /* Book newBook = new Book("Basic Economics", "Thomas Sowell", 
-        0.99f, LocalDate.parse("2014-12-01"), "A citizen's guide to economics."); */
         Book book = BookRepository.mapToModel(attributes);
         bookRepository.save(book);
         return book;
@@ -32,7 +30,6 @@ public class BookService {
     public Book updateBook(Integer id, Map<String, String> changes) {
         Book book = bookRepository.findById(id).get();
         book = BookRepository.updateChanges(book, changes);
-        //System.out.println(changes.toString());
         bookRepository.save(book);
         return book;
     }

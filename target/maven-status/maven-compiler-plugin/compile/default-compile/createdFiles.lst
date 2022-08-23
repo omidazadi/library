@@ -1,8 +1,6 @@
 com/tosansoha/library/models/Ownership.class
 com/tosansoha/library/models/OwnershipKey.class
-com/tosansoha/library/test.class
 com/tosansoha/library/repositories/BookRepository.class
-com/tosansoha/library/AppConfig.class
 com/tosansoha/library/models/Book.class
 com/tosansoha/library/repositories/OwnershipRepository.class
 com/tosansoha/library/repositories/MemberRepository.class

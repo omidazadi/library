@@ -26,6 +26,6 @@ public interface MemberRepository extends JpaRepository <Member, Integer> {
 
     public static Member mapToModel(Map<String, String> attributes) {
         return new Member(attributes.get("name"), LocalDate.parse(attributes.get("birthDate")), 
-        LocalDate.parse(attributes.get("registrationDate")), attributes.get("bio"));
+        LocalDate.parse(attributes.get("registrationDate")), attributes.getOrDefault("bio", null));
     }
 }

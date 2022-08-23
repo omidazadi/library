@@ -97,6 +97,13 @@ public class Book {
     @Override
     public String toString()
     {
-        return ToStringBuilder.reflectionToString(this);
+        return new ToStringBuilder(this)
+        .append("id", this.getId())
+        .append("title", this.getTitle())
+        .append("author", this.getAuthor())
+        .append("price", this.getPrice())
+        .append("publicationDate", this.getPublicationDate())
+        .append("description", this.getDescription())
+        .toString();
     }
 }

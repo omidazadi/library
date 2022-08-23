@@ -40,6 +40,9 @@ public class OwnershipKey implements Serializable{
     @Override
     public String toString()
     {
-        return ToStringBuilder.reflectionToString(this);
+        return new ToStringBuilder(this)
+        .append("bookId", this.getBookId())
+        .append("memberId", this.getMemberId())
+        .toString();
     }
 }

@@ -86,6 +86,12 @@ public class Member {
     @Override
     public String toString()
     {
-        return ToStringBuilder.reflectionToString(this);
+        return new ToStringBuilder(this)
+        .append("id", this.getId())
+        .append("name", this.getName())
+        .append("birthDate", this.getBirthDate())
+        .append("registrationDate", this.getRegistrationDate())
+        .append("bio", this.getBio())
+        .toString();
     }
 }

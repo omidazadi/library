@@ -29,6 +29,6 @@ public interface BookRepository extends JpaRepository <Book, Integer> {
 
     public static Book mapToModel(Map<String, String> attributes) {
         return new Book(attributes.get("title"), attributes.get("author"), Float.parseFloat(attributes.get("price")), 
-        LocalDate.parse(attributes.get("publicationDate")), attributes.get("description"));
+        LocalDate.parse(attributes.get("publicationDate")), attributes.getOrDefault("description", null));
     }
 }
